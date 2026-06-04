@@ -1,0 +1,321 @@
+// CoordinateTriggerEvents 1.1.0 English configuration template
+// Generated path: <Custom Rundown datablock folder>/Custom/CoordinateTriggerEvents/Template_EN.json
+// The template defaults to Enabled=false and will not affect levels. Copy this file, rename it as a level config, then set Enabled to true.
+// The plugin allows // comments and trailing commas. Multiple JSON files are supported; only configs whose MainLevelLayoutIDs match the current level are enabled.
+{
+  "Enabled": false,
+  "MainLevelLayoutIDs":0,
+  "Debug": {//Debug mode, for mod developers to view the actual positions of triggers
+    "Enabled": false,
+    "ShowScanMarkers": true,
+    "ShowNames": true,
+    "MarkerColor": "#00BFFF",
+    "LabelColor": "#FFFFFF",
+    "MarkerAlpha": 0.35,
+    "HeightOffset": 0.05,
+    "LabelHeightOffset": 1.0
+  },
+  "PositionTriggers": [
+    {
+      "ID": "radius_player_count_example", //Unique ID of the current trigger
+      "TriggerAreaMode": "Radius",
+      //Radius: generates a trigger area from a world position and radius.
+
+      "TriggerMode": "AnyPlayerEnter",
+      //AnyPlayerEnter  Triggers the event when any player enters the trigger area
+
+      //AnyPlayerInside Repeatedly triggers while any player is inside the trigger area according to "Cooldown": 1.0,
+
+      //AllPlayersEnter Triggers after all eligible players enter the area
+
+      //AllPlayersInside Repeatedly triggers while all eligible players are inside according to "Cooldown": 1.0,
+
+      //AnyPlayerExit Triggers when any player leaves the area from inside
+
+      //AllPlayersExit Triggers when all players leave the area from inside
+
+      "Enabled": true,
+      "Position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "Radius": 5.0, //Trigger size
+      "Cooldown": 1.0, //Built-in cooldown
+      "RequireAlivePlayers": true, //Downed players are not counted as player count
+      "DebugVisible": true, //Enable debug mode
+      "Events": [], //Event list
+      "UsePlayerCountEvents": false,
+      // When true, only executes the event group matching the player count in PlayerCountEvents; when false, executes the event group inside Events
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      // Adds 1 Count for every successful trigger; after accumulating TriggerCycleCount groups, triggers additional events
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "whole_zone_localindex_0",
+      "TriggerAreaMode": "OverrideBigZone",
+      //OverrideBigZone generates a trigger that covers the specified ZONE
+      "TriggerMode": "AnyPlayerEnter",
+      "Enabled": true,
+      "DimensionIndex": 0,
+      "Layer": 0,
+      "LocalIndex": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "DebugVisible": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "whole_area_count_0",
+      "TriggerAreaMode": "OverrideArea",
+      //OverrideArea generates a trigger that covers the specified Zone Area
+      "TriggerMode": "AnyPlayerEnter",
+      "Enabled": true,
+      "DimensionIndex": 0,
+      "Layer":0,
+      "LocalIndex": 0,
+      "Count": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "DebugVisible": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    }
+  ],
+  "ScanTriggers": [
+    {
+      "ID": "scan_1_activated_player_count",
+      "TriggerMode": "OnScanActivated",
+      //OnScanActivated Triggers the event when players activate the scan
+      //OnPlayerExitScan Triggers the event when a player exits the scan
+      "Enabled": true,
+      // Index uses the PuzzleOverrideIndex printed by ScanPositionOverride / ECC in the BepInEx log. The index starts from 1.
+      "Index": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_player_exit_event",
+      "TriggerMode": "OnPlayerExitScan",
+      "Enabled": true,
+      "Index": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_all_players_enter_once",
+      "TriggerMode": "OnAllPlayersEnterScan",
+      "Enabled": true,
+      // Triggers once when all players enter the scan.
+      "Index": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_all_players_inside_repeat",
+      "TriggerMode": "OnAllPlayersInsideScan",
+      "Enabled": true,
+      // Repeatedly triggers by Cooldown while all players continuously stay inside the scan.
+      "Index": 0,
+      "Cooldown": 5.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_all_players_exit_once",
+      "TriggerMode": "OnAllPlayersExitScan",
+      "Enabled": true,
+      // Triggers once after all players have entered the scan and then all leave it.
+      "Index": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_all_players_exited_repeat",
+      "TriggerMode": "OnAllPlayersExitedScan",
+      "Enabled": true,
+      // Repeatedly triggers by Cooldown after all players have entered the scan and then all leave it; it does not trigger when the scan starts empty.
+      "Index": 0,
+      "Cooldown": 5.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    }
+  ],
+  "InteractTriggers": [
+    {
+      "ID": "bigpickup_1_pickup_event",
+      "TargetType": "BigPickup",
+      "TriggerMode": "OnBigPickupPickup",
+      //OnBigPickupPickup Triggers the event when a big pickup is picked up
+      //OnBigPickupDrop Triggers the event when a big pickup is dropped
+      "Enabled": true,
+      // Index uses the BigPickup Item Index printed by ScanPositionOverride / ECC in the BepInEx log. The index starts from 1.
+      "Index": 0,
+      "Cooldown": 1.0,
+      "Events": [],
+      "UsePickupDropCycleEvents": false,
+      "PickupDropCycleCount": 0,
+      "PickupDropCycleEvents": []
+    },
+    {
+      "ID": "bigpickup_1_drop_event",
+      "TargetType": "BigPickup",
+      "TriggerMode": "OnBigPickupDrop",
+      "Enabled": true,
+      "Index": 0,
+      "Cooldown": 1.0,
+      "Events": []
+    },
+    {
+      "ID": "bigpickup_1_held_repeat_event",
+      "TargetType": "BigPickup",
+      "TriggerMode": "OnBigPickupHeld",
+      "Enabled": true,
+      "Index": 0,
+      // Repeatedly triggers by Cooldown while the player is carrying this big pickup, similar to AnyPlayerInside.
+      "Cooldown": 5.0,
+      "Events": []
+    },
+    {
+      "ID": "bigpickup_1_placed_repeat_event",
+      "TargetType": "BigPickup",
+      "TriggerMode": "OnBigPickupPlaced",
+      "Enabled": true,
+      "Index": 0,
+      // After the player drops this big pickup, repeatedly triggers by Cooldown while the big pickup remains placed.
+      "Cooldown": 5.0,
+      "Events": []
+    },
+    {
+      "ID": "terminal_tsl_use_event",
+      "TargetType": "Terminal",
+      "TriggerMode": "OnTerminalUse",
+      //OnTerminalUse Triggers the event when using a terminal
+      //OnTerminalUnused Triggers the event when leaving a terminal
+      "Enabled": true,
+      // TerminalSelector is the same as AWO TSL: [TERMINAL_DimensionIndex_LayerIndex_ZoneLocalIndex_TerminalIndexInZone]
+      "TerminalSelector": "[TERMINAL_0_0_0_0]",
+      "Cooldown": 1.0,
+      "Events": []
+    },
+    {
+      "ID": "terminal_tsl_unused_event",
+      "TargetType": "Terminal",
+      "TriggerMode": "OnTerminalUnused",
+      "Enabled": true,
+      "TerminalSelector": "[TERMINAL_0_0_0_0]",
+      "Cooldown": 1.0,
+      "Events": []
+    },
+    {
+      "ID": "terminal_tsl_using_repeat_event",
+      "TargetType": "Terminal",
+      "TriggerMode": "OnTerminalUsing",
+      "Enabled": true,
+      "TerminalSelector": "[TERMINAL_0_0_0_0]",
+      // Repeatedly triggers by Cooldown while the player is using this terminal, similar to AnyPlayerInside.
+      "Cooldown": 5.0,
+      "Events": []
+    },
+    {
+      "ID": "terminal_tsl_exited_repeat_event",
+      "TargetType": "Terminal",
+      "TriggerMode": "OnTerminalExited",
+      "Enabled": true,
+      "TerminalSelector": "[TERMINAL_0_0_0_0]",
+      // The player must have used and then exited this terminal once before this repeatedly triggers by Cooldown; it will not trigger in the initial unused state.
+      "Cooldown": 5.0,
+      "Events": []
+    }
+  ]
+}

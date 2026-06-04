@@ -1,0 +1,321 @@
+// CoordinateTriggerEvents 1.1.0 中文配置模板
+// 生成位置：<自定义Rundown数据块文件夹>/Custom/CoordinateTriggerEvents/Template_CN.json
+// 模板默认 Enabled=false，不会影响关卡。复制本文件并改名为关卡配置后，把 Enabled 改为 true。
+// 插件允许 // 注释和尾随逗号。支持多个 JSON 文件；只会启用 MainLevelLayoutIDs 匹配当前关卡的配置。
+{
+  "Enabled": false,
+  "MainLevelLayoutIDs":0,
+  "Debug": {//调试模式，供模组开发者查看触发器的实际位置
+    "Enabled": false,
+    "ShowScanMarkers": true,
+    "ShowNames": true,
+    "MarkerColor": "#00BFFF",
+    "LabelColor": "#FFFFFF",
+    "MarkerAlpha": 0.35,
+    "HeightOffset": 0.05,
+    "LabelHeightOffset": 1.0
+  },
+  "PositionTriggers": [
+    {
+      "ID": "radius_player_count_example", //当前触发器的唯一id
+      "TriggerAreaMode": "Radius",
+      //Radius：按一个世界坐标点和半径生成触发范围。
+
+      "TriggerMode": "AnyPlayerEnter",
+      //AnyPlayerEnter  任意玩家进入触发范围触发事件
+
+      //AnyPlayerInside 触发范围内有任意玩家根据"Cooldown": 1.0,重复触发
+
+      //AllPlayersEnter 所有符合条件的玩家进入范围后触发
+
+      //AllPlayersInside 所有符合条件的玩家根据"Cooldown": 1.0,重复触发
+
+      //AnyPlayerExit 任意玩家从范围内离开范围时触发
+
+      //AllPlayersExit 所有玩家从范围内离开时触发
+
+      "Enabled": true,
+      "Position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "Radius": 5.0, //触发器大小
+      "Cooldown": 1.0, //内置冷却cd
+      "RequireAlivePlayers": true, //玩家倒地不计算为人数
+      "DebugVisible": true, //开启调试模式
+      "Events": [], //事件列表
+      "UsePlayerCountEvents": false,
+      // true 时只执行 PlayerCountEvents 中对应人数的事件组；false 时执行 Events内的事件组
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      // 每成功触发一次+1Count；累计 TriggerCycleCount 组后额外触发事件
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "whole_zone_localindex_0",
+      "TriggerAreaMode": "OverrideBigZone",
+      //OverrideBigZone 生成一个覆盖指定ZONE的触发器
+      "TriggerMode": "AnyPlayerEnter",
+      "Enabled": true,
+      "DimensionIndex": 0,
+      "Layer": 0,
+      "LocalIndex": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "DebugVisible": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "whole_area_count_0",
+      "TriggerAreaMode": "OverrideArea",
+      //OverrideArea  生成一个覆盖指定Zone Area区域的触发器
+      "TriggerMode": "AnyPlayerEnter",
+      "Enabled": true,
+      "DimensionIndex": 0,
+      "Layer":0,
+      "LocalIndex": 0,
+      "Count": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "DebugVisible": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    }
+  ],
+  "ScanTriggers": [
+    {
+      "ID": "scan_1_activated_player_count",
+      "TriggerMode": "OnScanActivated",
+      //OnScanActivated 玩家激活扫描点时触发事件
+      //OnPlayerExitScan 玩家退出扫描点时触发事件
+      "Enabled": true,
+      // Index 使用 ScanPositionOverride / ECC 在 BepInEx 日志中输出的 PuzzleOverrideIndex，索引从 1 开始。
+      "Index": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_player_exit_event",
+      "TriggerMode": "OnPlayerExitScan",
+      "Enabled": true,
+      "Index": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_all_players_enter_once",
+      "TriggerMode": "OnAllPlayersEnterScan",
+      "Enabled": true,
+      // 全员进入扫描点时触发一次。
+      "Index": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_all_players_inside_repeat",
+      "TriggerMode": "OnAllPlayersInsideScan",
+      "Enabled": true,
+      // 全员持续在扫描点内时按 Cooldown 重复触发。
+      "Index": 0,
+      "Cooldown": 5.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_all_players_exit_once",
+      "TriggerMode": "OnAllPlayersExitScan",
+      "Enabled": true,
+      // 全员曾进入扫描点后全部退出时触发一次。
+      "Index": 0,
+      "Cooldown": 1.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    },
+    {
+      "ID": "scan_1_all_players_exited_repeat",
+      "TriggerMode": "OnAllPlayersExitedScan",
+      "Enabled": true,
+      // 全员曾进入扫描点并全部退出后按 Cooldown 重复触发；初始无人不会触发。
+      "Index": 0,
+      "Cooldown": 5.0,
+      "RequireAlivePlayers": true,
+      "Events": [],
+      "UsePlayerCountEvents": false,
+      "PlayerCountEvents": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "UseTriggerCycleEvents": false,
+      "TriggerCycleCount": 0,
+      "TriggerCycleEvents": []
+    }
+  ],
+  "InteractTriggers": [
+    {
+      "ID": "bigpickup_1_pickup_event",
+      "TargetType": "BigPickup",
+      "TriggerMode": "OnBigPickupPickup",
+      //OnBigPickupPickup 拾取大物品触发事件
+      //OnBigPickupDrop 放下大物品触发事件
+      "Enabled": true,
+      // Index 使用 ScanPositionOverride / ECC 在 BepInEx 日志中输出的 BigPickup Item Index，索引从 1 开始。
+      "Index": 0,
+      "Cooldown": 1.0,
+      "Events": [],
+      "UsePickupDropCycleEvents": false,
+      "PickupDropCycleCount": 0,
+      "PickupDropCycleEvents": []
+    },
+    {
+      "ID": "bigpickup_1_drop_event",
+      "TargetType": "BigPickup",
+      "TriggerMode": "OnBigPickupDrop",
+      "Enabled": true,
+      "Index": 0,
+      "Cooldown": 1.0,
+      "Events": []
+    },
+    {
+      "ID": "bigpickup_1_held_repeat_event",
+      "TargetType": "BigPickup",
+      "TriggerMode": "OnBigPickupHeld",
+      "Enabled": true,
+      "Index": 0,
+      // 玩家拿着该大物品期间按 Cooldown 重复触发，类似 AnyPlayerInside。
+      "Cooldown": 5.0,
+      "Events": []
+    },
+    {
+      "ID": "bigpickup_1_placed_repeat_event",
+      "TargetType": "BigPickup",
+      "TriggerMode": "OnBigPickupPlaced",
+      "Enabled": true,
+      "Index": 0,
+      // 玩家放下该大物品后，只要大物品保持放置状态，就按 Cooldown 重复触发。
+      "Cooldown": 5.0,
+      "Events": []
+    },
+    {
+      "ID": "terminal_tsl_use_event",
+      "TargetType": "Terminal",
+      "TriggerMode": "OnTerminalUse",
+      //OnTerminalUse 使用终端触发事件
+      //OnTerminalUnused 退出终端触发事件
+      "Enabled": true,
+      // TerminalSelector 与 AWO TSL 一致：[TERMINAL_DimensionIndex_LayerIndex_ZoneLocalIndex_TerminalIndexInZone]
+      "TerminalSelector": "[TERMINAL_0_0_0_0]",
+      "Cooldown": 1.0,
+      "Events": []
+    },
+    {
+      "ID": "terminal_tsl_unused_event",
+      "TargetType": "Terminal",
+      "TriggerMode": "OnTerminalUnused",
+      "Enabled": true,
+      "TerminalSelector": "[TERMINAL_0_0_0_0]",
+      "Cooldown": 1.0,
+      "Events": []
+    },
+    {
+      "ID": "terminal_tsl_using_repeat_event",
+      "TargetType": "Terminal",
+      "TriggerMode": "OnTerminalUsing",
+      "Enabled": true,
+      "TerminalSelector": "[TERMINAL_0_0_0_0]",
+      // 玩家正在使用该终端期间按 Cooldown 重复触发，类似 AnyPlayerInside。
+      "Cooldown": 5.0,
+      "Events": []
+    },
+    {
+      "ID": "terminal_tsl_exited_repeat_event",
+      "TargetType": "Terminal",
+      "TriggerMode": "OnTerminalExited",
+      "Enabled": true,
+      "TerminalSelector": "[TERMINAL_0_0_0_0]",
+      // 必须玩家使用过一次该终端并退出后，才会按 Cooldown 重复触发；初始未使用状态不会触发。
+      "Cooldown": 5.0,
+      "Events": []
+    }
+  ]
+}
