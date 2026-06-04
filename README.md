@@ -1,6 +1,6 @@
 # CoordinateTriggerEvents 1.1.0
 
-GTFO  坐标、扫描点、大物品、终端事件触发插件。
+A GTFO plugin for triggering events from coordinates, bioscans, big pickup items, and terminals.
 
 ##
 CoordinateTriggerEvents provides GTFO level designers with a lightweight and configurable “event trigger layer” that converts real player actions inside an expedition into WardenEvents. It does not replace GTFO’s vanilla Objective system, nor does it replace plugins such as EOS, AWO, or ECC. Instead, it supplements trigger scenarios that those systems cannot directly cover.
