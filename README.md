@@ -1,4 +1,4 @@
-# CoordinateTriggerEvents 1.1.0
+# CoordinateTriggerEvents 
 
 A GTFO plugin for triggering events from coordinates, bioscans, big pickup items, and terminals.
 
