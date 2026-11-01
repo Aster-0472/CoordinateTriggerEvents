@@ -1,0 +1,9 @@
+{
+  "name": "CoordinateTriggerEvents",
+  "version_number": "1.8.1",
+  "version": "1.8.1",
+  "minimum_gtfo_api": "0.6.0",
+  "plugin_guid": "com.gtfo.coordinatetriggerevents",
+  "description": "GTFO BepInEx plugin for coordinate, scan, big pickup, and HUD interact trigger events.",
+  "plugin_dll": "BepInEx/plugins/CoordinateTriggerEvents.dll"
+}
