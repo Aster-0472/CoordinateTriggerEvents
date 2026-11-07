@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <GTFOApiPath Condition="'$(GTFOApiPath)' == '' And Exists('$(PluginDir)/GTFO-API.dll')">$(PluginDir)/GTFO-API.dll</GTFOApiPath>
+    <GTFOApiPath Condition="'$(GTFOApiPath)' == ''">$(PluginDir)/GTFO_API/GTFO-API.dll</GTFOApiPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GTFO-API, Version=0.6.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(GTFOApiPath)</HintPath>
+      <SpecificVersion>true</SpecificVersion>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="ValidateGTFOApiVersion" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(GTFOApiPath)')" Text="GTFO-API 0.6.1 is required. Set GTFOApiPath to its DLL." />
+    <GetAssemblyIdentity AssemblyFiles="$(GTFOApiPath)">
+      <Output TaskParameter="Assemblies" ItemName="_GTFOApiIdentity" />
+    </GetAssemblyIdentity>
+    <Error Condition="'%(_GTFOApiIdentity.Name)' != 'GTFO-API' Or '%(_GTFOApiIdentity.Version)' != '0.6.1.0'" Text="Expected GTFO-API 0.6.1.0 at $(GTFOApiPath), found %(_GTFOApiIdentity.Name) %(_GTFOApiIdentity.Version)." />
+  </Target>
+</Project>
